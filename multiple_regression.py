@@ -59,9 +59,13 @@ def visual_example():
     graph_3d.set_zlabel("Final Grade")
 
     # best fit line
-    x1, y1, z1 = 0, 0, intercept
+    x3, y1, z1 = 0, 0, intercept
     x2, y2, z2 = max(data[first]), max(data[second]), max(data[first])*coefficients[0] + max(data[second])*coefficients[1] + intercept
-    graph_3d.plot([x1, x2], [y1, y2], zs=[z1, z2], color="red")
+    graph_3d.plot([x3, x2], [y1, y2], zs=[z1, z2], color="red")
+
+    x3, y3, z3 = max(data[first]), 0, max(data[first])*coefficients[0] + intercept
+    x4, y4, z4 = 0, max(data[second]), max(data[second])*coefficients[1] + intercept
+    graph_3d.plot([x3, x4], [y3, y4], zs=[z3, z4], color="red")
 
     plt.show()
 
